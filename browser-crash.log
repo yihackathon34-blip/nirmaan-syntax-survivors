@@ -1,0 +1,12 @@
+LOG: [vite] connecting...
+LOG: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+ERR: useToast must be used within ToastProvider
+ERR: useToast must be used within ToastProvider
+LOG: The above error occurred in the <DataProvider> component:
+
+    at DataProvider (http://localhost:5173/src/context/DataContext.jsx:30:32)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+ERR: useToast must be used within ToastProvider
+LOG: [vite] connected.

@@ -1,0 +1,11 @@
+vite v5.4.21 building for production...
+transforming...
+✓ 139 modules transformed.
+x Build failed in 352ms
+error during build:
+Could not resolve "../context/AuthContext" from "src/pages/CandidateSignIn.jsx"
+file: C:/Users/jayde/.gemini/antigravity/scratch/nirmaan/src/pages/CandidateSignIn.jsx
+    at getRollupError (file:///C:/Users/jayde/.gemini/antigravity/scratch/nirmaan/node_modules/rollup/dist/es/shared/parseAst.js:317:41)
+    at error (file:///C:/Users/jayde/.gemini/antigravity/scratch/nirmaan/node_modules/rollup/dist/es/shared/parseAst.js:313:42)
+    at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/jayde/.gemini/antigravity/scratch/nirmaan/node_modules/rollup/dist/es/shared/node-entry.js:22002:24)
+    at file:///C:/Users/jayde/.gemini/antigravity/scratch/nirmaan/node_modules/rollup/dist/es/shared/node-entry.js:21962:26

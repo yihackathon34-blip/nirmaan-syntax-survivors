@@ -1,0 +1,65 @@
+﻿node.exe : npm warn 
+deprecated 
+recharts@2.15.4: 1.x 
+and 2.x branches are 
+no longer active. 
+Bump to Recharts v3 
+to receive latest 
+features and 
+bugfixes. See https:/
+/github.com/recharts/
+recharts/wiki/3.0-mig
+ration-guide
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (npm war   
+ n deprec...migra    
+tion-guide:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+added 106 packages, and audited 107 packages in 21s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm warn 
+install-scripts 1 
+package has install 
+scripts not yet 
+covered by 
+allowScripts:
+npm warn 
+install-scripts   
+esbuild@0.21.5 
+(postinstall: node 
+install.js)
+npm warn 
+install-scripts
+npm warn 
+install-scripts Run 
+`npm install-scripts 
+ls` to review, or 
+`npm install-scripts 
+approve <pkg>` to 
+allow.
