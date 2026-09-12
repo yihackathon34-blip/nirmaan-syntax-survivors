@@ -1,0 +1,185 @@
+/* =====================================================
+   NIRMAAN Design Tokens — from Stitch design system
+   "Nirmaan Narrative" / "Trajectory & Construction"
+   ===================================================== */
+
+:root {
+  /* Background & Surfaces */
+  --bg: #16130b;
+  --bg-dim: #16130b;
+  --surface: #231f17;
+  --surface-low: #1f1b13;
+  --surface-high: #2d2a21;
+  --surface-highest: #38342b;
+  --surface-bright: #3d392f;
+
+  /* Text */
+  --on-surface: #eae1d4;
+  --on-surface-variant: #d0c5af;
+  --on-surface-faint: #99907c;
+
+  /* Borders */
+  --outline: #99907c;
+  --outline-variant: #4d4635;
+
+  /* Primary — Amber gold */
+  --primary: #f2ca50;
+  --primary-dim: #e9c349;
+  --primary-container: #d4af37;
+  --on-primary: #3c2f00;
+  --primary-glow: rgba(242, 202, 80, 0.12);
+
+  /* Secondary — Teal */
+  --secondary: #a1cfcf;
+  --secondary-container: #225050;
+  --on-secondary: #013737;
+
+  /* Error */
+  --error: #ffb4ab;
+  --error-container: #93000a;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 700 64px/72px var(--font-family);
+
+  /* Sizing */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 64px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--outline-variant);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--outline-variant);
+  --shadow-amber: 0 0 0 1px var(--primary-container), 0 4px 16px rgba(212, 175, 55, 0.15);
+
+  /* ── Aliases used by component CSS modules ─────────────────────────── */
+
+  /* Color aliases */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-low);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-surface-bright: var(--surface-bright);
+
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-on-surface-faint: var(--on-surface-faint);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-primary: var(--primary);
+  --color-primary-dim: var(--primary-dim);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-primary-glow: var(--primary-glow);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+
+  --color-error: var(--error);
+
+  /* Radius aliases */
+  --radius-base: var(--radius-lg);
+  --radius-card: var(--radius-xl);
+
+  /* Spacing aliases */
+  --spacing-xs: var(--space-2);
+  --spacing-sm: var(--space-3);
+  --spacing-md: var(--space-6);
+  --spacing-lg: var(--space-8);
+  --spacing-xl: var(--space-12);
+  --spacing-2xl: var(--space-16);
+}
+
+/* =====================================================
+   ACCESSIBILITY OVERRIDES
+   ===================================================== */
+
+/* 1. Red-Green Safe (Deuteranopia/Protanopia) */
+/* Avoid relying on red and green. Make errors magenta/orange and success/secondary deep blue. */
+html[data-color-mode="red-green"] {
+  --secondary: #64b5f6;
+  /* Shift from teal to blue */
+  --secondary-container: #1565c0;
+  --on-secondary: #e3f2fd;
+
+  --error: #ff8a65;
+  /* Shift from red to distinct coral/orange */
+  --error-container: #bf360c;
+}
+
+/* 2. Blue-Yellow Safe (Tritanopia) */
+/* Avoid relying on yellow/amber and blue. Make primary red/pink and secondary green. */
+html[data-color-mode="blue-yellow"] {
+  --primary: #ff5252;
+  /* Shift from amber to distinct red/pink */
+  --primary-dim: #ff1744;
+  --primary-container: #d50000;
+  --on-primary: #ffffff;
+  --primary-glow: rgba(255, 82, 82, 0.15);
+
+  --secondary: #69f0ae;
+  /* Shift from teal/blueish to pure green */
+  --secondary-container: #00c853;
+  --on-secondary: #000000;
+}
+
+/* 3. High Contrast Mode */
+html[data-high-contrast="true"] {
+  /* Surfaces go pure black / white outlines */
+  --bg: #000000;
+  --bg-dim: #000000;
+  --surface: #0a0a0a;
+  --surface-low: #111111;
+  --surface-high: #1a1a1a;
+  --surface-highest: #222222;
+  --surface-bright: #333333;
+
+  --on-surface: #ffffff;
+  /* Make variant text super bright for contrast */
+  --on-surface-variant: #f0f0f0;
+  --on-surface-faint: #dcdcdc;
+
+  /* Crisp outlines */
+  --outline: #ffffff;
+  --outline-variant: #aaaaaa;
+
+  /* Super bright semantic colors */
+  --primary: #ffff00;
+  --primary-dim: #cccc00;
+  --primary-container: #ffff00;
+  --on-primary: #000000;
+
+  --secondary: #00ffff;
+  --secondary-container: #00ffff;
+  --on-secondary: #000000;
+
+  --error: #ff3333;
+  --error-container: #ff3333;
+}

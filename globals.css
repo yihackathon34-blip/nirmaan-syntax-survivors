@@ -1,0 +1,164 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg);
+    color: var(--on-surface);
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: var(--font-family);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input,
+textarea,
+select {
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--outline-variant);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--outline);
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Utility classes */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Page transitions */
+.page-enter {
+    animation: pageIn var(--transition-base) forwards;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Material Icons sizing helper */
+.material-icons {
+    font-size: 20px;
+    line-height: 1;
+    user-select: none;
+}
+
+.material-icons.sm {
+    font-size: 16px;
+}
+
+.material-icons.lg {
+    font-size: 24px;
+}
+
+/* =====================================================
+   ACCESSIBILITY BEHAVIORS
+   ===================================================== */
+
+/* Large Text */
+html[data-large-text="true"] {
+    font-size: 18px !important;
+    /* Scales all rem-based typography seamlessly */
+}
+
+/* Reduced Motion */
+html[data-reduced-motion="true"] *,
+html[data-reduced-motion="true"] *::before,
+html[data-reduced-motion="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Keyboard Focus Indicators */
+html[data-keyboard-focus="true"] *:focus-visible {
+    outline: 4px solid var(--primary) !important;
+    outline-offset: 4px !important;
+}
+
+/* Reading Assistant */
+html[data-reading-assist="true"] p,
+html[data-reading-assist="true"] span,
+html[data-reading-assist="true"] h1,
+html[data-reading-assist="true"] h2,
+html[data-reading-assist="true"] h3,
+html[data-reading-assist="true"] h4,
+html[data-reading-assist="true"] li {
+    line-height: 1.8 !important;
+    letter-spacing: 0.035em !important;
+}
+
+html[data-reading-assist="true"] p {
+    max-width: 65ch;
+    /* Ideal width for cognitive ease */
+}
